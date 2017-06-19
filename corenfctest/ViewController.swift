@@ -32,7 +32,7 @@ class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
         for message in messages{
             for payload in message.records {
                 
-                if let payloadstr = String(data: payload.payload, encoding: .ascii) {
+                if let payloadstr = String(data: payload.payload, encoding: .ascii) { // get payload data for String
                     print(payloadstr)
                 }
                 if let identifier: String = String(data: payload.identifier, encoding: .ascii) {
