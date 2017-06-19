@@ -14,6 +14,7 @@
 		8E1B7FE61EF60B2A00CF3C17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E1B7FE41EF60B2A00CF3C17 /* LaunchScreen.storyboard */; };
 		8E1B7FF11EF60B2A00CF3C17 /* corenfctestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B7FF01EF60B2A00CF3C17 /* corenfctestTests.swift */; };
 		8E1B7FFC1EF60B2A00CF3C17 /* corenfctestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B7FFB1EF60B2A00CF3C17 /* corenfctestUITests.swift */; };
+		8E6936741EF80C070085E99B /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E6936731EF80BFC0085E99B /* CoreNFC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		8E1B7FF71EF60B2A00CF3C17 /* corenfctestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = corenfctestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1B7FFB1EF60B2A00CF3C17 /* corenfctestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = corenfctestUITests.swift; sourceTree = "<group>"; };
 		8E1B7FFD1EF60B2A00CF3C17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E6936731EF80BFC0085E99B /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
+		8E703BBE1EF811E600011C8D /* corenfctest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = corenfctest.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E6936741EF80C070085E99B /* CoreNFC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +85,7 @@
 				8E1B7FEF1EF60B2A00CF3C17 /* corenfctestTests */,
 				8E1B7FFA1EF60B2A00CF3C17 /* corenfctestUITests */,
 				8E1B7FD91EF60B2A00CF3C17 /* Products */,
+				8E6936721EF80BFC0085E99B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +102,7 @@
 		8E1B7FDA1EF60B2A00CF3C17 /* corenfctest */ = {
 			isa = PBXGroup;
 			children = (
+				8E703BBE1EF811E600011C8D /* corenfctest.entitlements */,
 				8E1B7FDB1EF60B2A00CF3C17 /* AppDelegate.swift */,
 				8E1B7FDD1EF60B2A00CF3C17 /* ViewController.swift */,
 				8E1B7FDF1EF60B2A00CF3C17 /* Main.storyboard */,
@@ -123,6 +129,14 @@
 				8E1B7FFD1EF60B2A00CF3C17 /* Info.plist */,
 			);
 			path = corenfctestUITests;
+			sourceTree = "<group>";
+		};
+		8E6936721EF80BFC0085E99B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E6936731EF80BFC0085E99B /* CoreNFC.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +207,21 @@
 				TargetAttributes = {
 					8E1B7FD71EF60B2A00CF3C17 = {
 						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.Siri = {
+								enabled = 0;
+							};
+						};
 					};
 					8E1B7FEB1EF60B2A00CF3C17 = {
 						CreatedOnToolsVersion = 9.0;
@@ -419,11 +448,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = corenfctest/corenfctest.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62CRXDX4KD;
 				INFOPLIST_FILE = corenfctest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.woojong.corenfctest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.woojong.corenfc.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -433,11 +466,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = corenfctest/corenfctest.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 62CRXDX4KD;
 				INFOPLIST_FILE = corenfctest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.woojong.corenfctest;
+				PRODUCT_BUNDLE_IDENTIFIER = com.woojong.corenfc.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -524,6 +561,7 @@
 				8E1B80021EF60B2A00CF3C17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E1B80031EF60B2A00CF3C17 /* Build configuration list for PBXNativeTarget "corenfctestTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +570,7 @@
 				8E1B80051EF60B2A00CF3C17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E1B80061EF60B2A00CF3C17 /* Build configuration list for PBXNativeTarget "corenfctestUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +579,7 @@
 				8E1B80081EF60B2A00CF3C17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
