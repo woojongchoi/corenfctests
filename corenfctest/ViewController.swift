@@ -46,7 +46,15 @@ class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
-        print(error)
-    }
-}
+        if let readerError = error as? NFCReaderError {
+            if (readerError.code != .readerSessionInvalidationErrorFirstNDEFTagRead)
+                && (readerError.code != .readerSessionInvalidationErrorUserCanceled) {
+                let alertController = UIAlertController(title: "Session Invalidated", message: error.localizedDescription, preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                DispatchQueue.main.async {
+                    self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+    }}
 
