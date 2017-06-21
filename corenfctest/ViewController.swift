@@ -25,7 +25,7 @@ class ViewController: UIViewController, NFCNDEFReaderSessionDelegate {
     @IBAction func startScan(_ sender: Any) {
         let session:NFCNDEFReaderSession = NFCNDEFReaderSession(delegate: self, queue: nil, invalidateAfterFirstRead: false)
         session.begin()
-        print("Session Start")
+        print("Session Start") //comment
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
